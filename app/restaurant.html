@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+
+<link rel="manifest" href="manifest.json">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="theme-color" content="#317EFB"/>
+	<meta name="Description" content="Restaurant review..">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="preload" href="styles/styles.css" as="style">
+	<link rel="preload" href="styles/RestaurantsResponsiveDesign.css" as="style">
+	<link rel="preload" href="scripts/idb.js" as="script">
+	<link rel="preload" href="scripts/dbhelper.js" as="script">
+	<link rel="preload" href="scripts/restaurant_info.js" as="script">
+	<link rel="preload" href="scripts/common.js" as="script">
+	<link rel="preload" href="scripts/modificationOperations.js" as="script">
+
+	<link rel="preconnect" href="http://localhost:1337/">
+	<link rel="preconnect" href="https://maps.gstatic.com">
+
+	<link rel="stylesheet" href="styles/RestaurantsResponsiveDesign.css" media="(min-width: 10px)"/>
+	<link rel="stylesheet" href="styles/styles.css" type="text/css" media="all"/>
+
+  <!-- Normalize.css for better cross-browser consistency -->
+  <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" media="print"/>
+
+  <title>Restaurant Info</title>
+</head>
+
+<body class="inside">
+  <!-- Beginning header -->
+  <header>
+    <!-- Beginning nav -->
+    <nav>
+      <h1><a href="/">Restaurant Reviews</a></h1>
+    </nav>
+    <!-- Beginning breadcrumb -->
+    <nav id="breadcrumb" class="breadcrumb" aria-label="Breadcrumb">
+		<ol id="breadcrumbOL">
+			<li><a href="/">Home</a></li>
+		</ol>
+    </nav>
+    <!-- End breadcrumb -->
+    <!-- End nav -->
+  </header>
+  <!-- End header -->
+
+  <!-- Beginning main -->
+  <main id="maincontent">
+	<div class="mainContainDev">
+		<!-- Beginning map -->
+		<div class="topContainer">
+			<section id="map-container">
+			  <div id="map" aria-label="google map API" role="application">
+			  	<button id="loadMapButton" class="loadMapButton fa" onclick="loadMapComponent()" role="presentation" aria-label="Click to Load Map"> &#xf041;</button>
+			  </div>
+			</section>
+			<!-- End map -->
+			<!-- Beginning restaurant -->
+			<section id="restaurant-container" >
+			  <h2 id="restaurant-name" title="restaurant name" label="restaurant name"></h2>
+			  <picture id="restaurant-img"></picture>
+			  <p id="restaurant-cuisine" title="cuisine" label="cuisine" aria-labelledby="restaurant-name" aria-describedby="restaurant-cuisine"></p>
+			  <p id="restaurant-address" title="address" label="address" aria-labelledby="restaurant-name" aria-describedby="restaurant-address"></p>
+			  <table id="restaurant-hours" title="working hours" label="Working hours" role="table" aria-describedby="restaurant-hours"></table>
+			</section>
+		</div>
+		<!-- end restaurant -->
+		<!-- Beginning reviews -->
+		<section id="reviews-container">
+			<h3>Reviews</h3>
+
+			<div id="userSubmitReviewForm" class="userSubmitReviewForm" role="form" aria-labelledby="myReviewHead">
+				<legend id="myReviewHead"><h4>Add New Review: </h4></legend>
+				<div>
+					<label class="reviewerNameLabel" for="reviewerName">Your Name: </label>
+					<input type="text" id="reviewerName" name="reviewerName" maxlength="50" >
+				</div>
+				
+				<div class="ratingParentDiv">
+					<div id="rating" class="rating">
+					    <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars">&#9734;</label>
+					    <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars">&#9734;</label>
+					    <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars">&#9734;</label>
+					    <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars">&#9734;</label>
+					    <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star">&#9734;</label>
+					</div>
+				</div>
+
+				<div class="userCommentDiv">
+					<label class="reviewerCommentLabel" for="reviewerComment">Write your Comment here</label>
+					<textarea id="reviewerComment" class="reviewerComment" rows="4" cols="50"></textarea>
+				</div>
+				<div>
+					<button id="submitReviewButton" onclick="submitUserReviewForm()">Send Review</button>
+				</div>
+			</div>
+
+			<div id="reviews-list"></div>
+		</section>
+		<!-- End reviews -->
+	</div>
+	
+	<div class="socialMedia">
+		<a href="https://twitter.com/home?status=https://github.com/udacity/responsive-images" class="zocial-twitter">Twitter</a>
+		<a href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/udacity/responsive-images" class="zocial-facebook">Facebook</a>
+		<a href="https://plus.google.com/share?url=https://github.com/udacity/responsive-images" class="zocial-googleplus">Google+</a>
+	</div>
+  </main>
+  <!-- End main -->
+
+  <!-- Beginning footer -->
+  <footer id="footer">
+	
+	Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+  </footer>
+  <!-- End footer -->
+
+  <!-- Beginning scripts -->
+  <!-- Database helpers -->
+  <script async defer src="scripts/sw.js"></script>
+  
+  <script type="text/javascript" src="scripts/idb.js"></script>
+  <script type="text/javascript" src="scripts/dbhelper.js"></script>
+
+  <script async defer src="scripts/common.js"></script>
+  <script async defer src="scripts/modificationOperations.js"></script>
+
+  <!-- Main javascript file -->
+  <script type="text/javascript" src="scripts/restaurant_info.js"></script>
+  <!-- Google Maps -->
+  <!-- End scripts -->
+
+</body>
+
+</html>

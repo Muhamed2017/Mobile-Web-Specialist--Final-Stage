@@ -1,0 +1,87 @@
+.restaurants-list {
+	display: flex;
+	flex-wrap: wrap;
+	width:100%;
+	max-width: 1110px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.searchingCriteriaBar{
+	display: flex;
+	flex-wrap: wrap;
+	width:100%;
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.searchingCriteriaDivs{
+	width: 50%;
+}
+
+
+.filter-label-options {
+	font-size: 12pt;
+	color: white;
+	font-weight: normal;
+  	line-height: 1;
+}
+
+
+
+@media screen and (max-width: 360px){
+	.filter-options select{
+		margin-left: 2%;
+		width: 40%;
+	}
+	.searchFavoriteDiv, .searchButton, .favoriteRadio{
+		margin-left: 0%;
+		font-size: 8pt;
+	}
+}
+
+@media screen and (min-width: 361px){
+	.filter-options select{
+		margin-left: 10%;
+		width: 30%;
+	}
+}
+
+@media screen and (max-width: 745px){
+	.restaurants-list{
+		width: 334px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+@media screen and (min-width: 746px) and (max-width: 1108px){
+	.restaurants-list{
+		width: 740px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.searchFavoriteDiv, .searchButton, .favoriteRadio{
+	margin-left: 3%;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt; 
+}
+
+.searchFavoriteDiv{
+    color: #fff;
+    margin: 0 auto;
+    text-align: center;
+    margin: 25px 0px;	
+}
+
+.searchButton{
+	font-weight: bold;
+}
+
+.favoriteButton{
+	color: #8A4500;
+}
+
+
